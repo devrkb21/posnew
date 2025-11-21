@@ -10,6 +10,3 @@ cmds = [
     "chmod -R 777 storage bootstrap/cache",
     "composer install --ignore-platform-reqs"
 ]
-
-[phases.build]
-cmds = ["npm install && npm run build"]
