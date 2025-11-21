@@ -1,0 +1,15 @@
+[phases.setup]
+nixPkgs = ["php82", "php82Packages.composer", "nginx", "libmysqlclient", "nodejs_18", "npm-9_x"]
+
+[phases.install]
+cmds = [
+    "mkdir -p storage/framework/cache",
+    "mkdir -p storage/framework/sessions",
+    "mkdir -p storage/framework/views",
+    "mkdir -p storage/logs",
+    "chmod -R 777 storage bootstrap/cache",
+    "composer install --ignore-platform-reqs"
+]
+
+[phases.build]
+cmds = ["npm install && npm run build"]
